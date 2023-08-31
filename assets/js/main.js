@@ -24,14 +24,14 @@
 			}, 100);
 		});
 
-	// Dropdowns.
-		$('#nav > ul').dropotron({
-			mode: 'fade',
-			noOpenerFade: true,
-			alignment: 'center'
-		});
+	// // Dropdowns.
+	// 	$('#nav > ul').dropotron({
+	// 		mode: 'fade',
+	// 		noOpenerFade: true,
+	// 		alignment: 'center'
+	// 	});
 
-	// Nav.
+	Nav.
 
 		// Title Bar.
 			$(
