@@ -1649,7 +1649,7 @@ input, select, textarea {
 		input[type="reset"].alt,
 		button.alt,
 		.button.alt {
-			background: #31669e;
+			background: #0b4638;
 		}
 
 			input[type="button"].alt:hover,
@@ -1921,7 +1921,7 @@ input, select, textarea {
 				height: 3em;
 				text-align: center;
 				border-radius: 5px;
-				background: #3598d5;
+				background: #0f6143;
 				-moz-transition: background-color .25s ease-in-out;
 				-webkit-transition: background-color .25s ease-in-out;
 				-ms-transition: background-color .25s ease-in-out;
@@ -1943,7 +1943,7 @@ input, select, textarea {
 					}
 
 				ul.social li a.fa-twitter {
-					background: #2daae4;
+					background: #2de4bf;
 				}
 
 					ul.social li a.fa-twitter:hover {
@@ -1953,7 +1953,7 @@ input, select, textarea {
 				
 
 				ul.social li a.fa-linkedin {
-					background: #006599;
+					background: #3d90ba;
 				}
 
 					ul.social li a.fa-linkedin:hover {
@@ -2169,7 +2169,7 @@ input, select, textarea {
 /* Banner */
 
 	#banner {
-		background: #0e3c14 url("../../images/pic01.jpg");
+		background: #13581c url("../../images/pic01.jpg");
 		background-position: center center;
 		background-size: auto 100%;
 		background-repeat: no-repeat;
@@ -2181,7 +2181,7 @@ input, select, textarea {
 
 		#banner header {
 			/*banner's color*/
-			background-color: rgba(0, 0, 0, 0.98);
+			background-color: rgba(11, 70, 56, 0.98);
 			display: inline-block;
 			padding: 2.5em 5em;
 			border-radius: 5px;
@@ -2195,7 +2195,7 @@ input, select, textarea {
 			}
 
 			#banner header p {
-				color: #4995e7;
+				color: #b1d6c7;
 				padding: 0;
 				font-style: normal;
 				margin: 0;
@@ -2263,7 +2263,7 @@ input, select, textarea {
 
 	#main {
 		position: relative;
-		background: #717a85 url("images/bg02.png");
+		background: #d3d6d3 url("images/bg02.png");
 		padding: 4em 0 4em 0;
 	}
 
