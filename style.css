@@ -96,14 +96,13 @@ nav button:hover {
 	width: 250px;
 	height: 400px; 
 	margin: 10px;
-	padding: 10px;
-	background-color: #f8f9fa;
-	color: #000000;
-	text-decoration: none;
+	padding: 20px;
+	background-color: #f8f8f8;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 	border: 1px solid #ddd;
 	border-radius: 8px;
 	text-align: center;
-	transition: background-color 0.3s ease, color 0.3s ease;
+	transition: background-color 0.3s ease;
 	overflow: hidden; 
 }
 .project-tile:hover {
