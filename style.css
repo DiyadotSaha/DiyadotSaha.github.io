@@ -245,3 +245,37 @@ nav button:hover {
 .badge:hover {
     background-color: #b3d5ea;  
 }
+
+/* Desktop and tablet style for the navigation buttons */
+nav {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+nav button {
+    text-decoration: none;
+    color: white;
+    margin: 0 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #12486A;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+/* Mobile responsiveness: Stack the buttons vertically */
+@media (max-width: 768px) {
+    nav {
+        text-align: left; /* Align buttons to the left */
+    }
+    
+    nav button {
+        display: block;  /* Stack the buttons vertically */
+        width: 100%;     /* Make the buttons take full width */
+        margin-bottom: 10px;  /* Add space between buttons */
+        padding: 15px 20px; /* Adjust padding for mobile screens */
+    }
+}
+
