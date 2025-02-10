@@ -199,3 +199,49 @@ nav button:hover {
 	flex-grow: 1;
 	text-align: left;
 }
+/* BADGES section ---- badges.html */
+.badge-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+/* Individual badge container */
+.badge {
+    display: flex;
+    flex-direction: column;  /* Stack image and text vertically */
+    justify-content: center;
+    align-items: center;
+    width: 200px; 
+    height: 250px; 
+    margin: 10px;
+    padding: 10px;
+    background-color: #f8f9fa;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+
+/* Ensure badge image fits nicely */
+.badge img {
+    width: 80%;  /* Adjust width to fit inside the box */
+    height: auto;  /* Maintain aspect ratio */
+    max-height: 150px;  /* Prevent image from being too big */
+    object-fit: contain; /* Ensures the full image is visible */
+    border-radius: 8px;
+}
+
+/* Badge text styling */
+.badge p {
+    margin-top: 10px;  /* Add space between image and text */
+    font-size: 1em;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Hover effect */
+.badge:hover {
+    background-color: #b3d5ea;  
+}
