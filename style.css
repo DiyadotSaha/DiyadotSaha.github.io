@@ -268,20 +268,20 @@ nav button {
     transition: background-color 0.3s ease;
 }
 
-/* Mobile responsiveness: Stack the buttons vertically */
+/* Mobile responsiveness */
 @media (max-width: 768px) {
     nav {
-        text-align: left; /* Align buttons to the left */
+        text-align: left;
     }
     
     nav button {
-        display: block;  /* Stack the buttons vertically */
-        width: 100%;     /* Make the buttons take full width */
-        margin-bottom: 10px;  /* Add space between buttons */
-        padding: 15px 20px; /* Adjust padding for mobile screens */
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+        padding: 15px 20px;
     }
 
-    /* Make profile picture go below text */
+    /* AUTHOR section mobile fix */
     .author-content {
         flex-direction: column;
         text-align: center;
@@ -295,16 +295,14 @@ nav button {
     .author-images {
         justify-content: center;
     }
-	story-section {
+
+    /* ARTICLE section mobile fix */
+    .story-section {
         flex-direction: column;
         text-align: center;
     }
 
     .story-section img {
-        margin: 0 0 15px 0; /* gap below image */
+        margin: 0 0 15px 0;
+        max-width: 90%;
     }
-
-    .story-content {
-        padding: 0;
-    }
-}
