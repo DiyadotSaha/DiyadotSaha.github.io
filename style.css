@@ -8,6 +8,7 @@ header {
 	text-align: center;
 	margin-bottom: 20px;
 }
+
 .author-images img {
     width: 200px;
     height: 200px;
@@ -15,13 +16,6 @@ header {
     object-fit: cover;
     display: block;
 }
-
-
-
-
-
-
-
 
 .header-image {
 	width: 100%;
@@ -155,7 +149,7 @@ nav button:hover {
 	flex: 1;
 	margin-right: 20px;
 }
- .author-images {
+.author-images {
 	display: flex;
 	justify-content: center; 
 	align-items: center;
@@ -168,7 +162,6 @@ nav button:hover {
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 	margin: 2rem 1rem;
 }
-
 
 /*CONTACT section ---- contact page */
 .collaboration-grid {
@@ -208,6 +201,7 @@ nav button:hover {
 	flex-grow: 1;
 	text-align: left;
 }
+
 /* BADGES section ---- badges.html */
 .badge-container {
     display: flex;
@@ -286,5 +280,31 @@ nav button {
         margin-bottom: 10px;  /* Add space between buttons */
         padding: 15px 20px; /* Adjust padding for mobile screens */
     }
-}
 
+    /* Make profile picture go below text */
+    .author-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .author-content p {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    
+    .author-images {
+        justify-content: center;
+    }
+	story-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .story-section img {
+        margin: 0 0 15px 0; /* gap below image */
+    }
+
+    .story-content {
+        padding: 0;
+    }
+}
