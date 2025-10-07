@@ -1,1 +1,1 @@
-View the portfolio site at : [https://diyadotsaha.github.io/]([url](https://diyadotsaha.github.io/))
+View the portfolio site at : [https://diyadotsaha.github.io/](https://diyadotsaha.github.io/)
