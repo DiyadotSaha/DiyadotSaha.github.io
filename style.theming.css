@@ -2,15 +2,16 @@
 :root {
   --bg: #ffffff;
   --text: #111111;
-  --muted-text: var(--muted-text);
+  --muted-text: #333333;
   --card: #ffffff;
-  --card-alt: var(--card-alt);
-  --card-hover: var(--card-hover);
-  --accent: var(--accent);
-  --accent-hover: var(--accent-hover);
-  --border: var(--border);
+  --card-alt: #f8f9fa;
+  --card-hover: #b3d5ea;
+  --accent: #12486A;
+  --accent-hover: #487d9d;
+  --border: #e5e5e5;
   --shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
+
 
 :root[data-theme="dark"] {
   --bg: #0f1214;
@@ -25,7 +26,6 @@
   --shadow: 0 4px 12px rgba(0,0,0,0.25);
 }
 
-/* Follow system preference when no explicit override */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]):not([data-theme="dark"]) {
     --bg: #0f1214;
@@ -41,12 +41,14 @@
   }
 }
 
-/* ===== END THEME TOKENS ===== */
 
 body {
 	font-family: Arial, sans-serif;
 	margin: 20px;
 	background-color: var(--bg);
+
+  background: var(--bg);
+  color: var(--text);
 }
 
 header {
@@ -68,35 +70,46 @@ header {
 	height: auto;
 	border-radius: 4px;
 }
-
 nav {
-	margin-bottom: 20px;
-	text-align: center;
+  margin-top: 0;             /* remove extra gap above nav */
+  margin-bottom: 20px;
+  text-align: center;
 }
 
-nav button {
-	text-decoration: none;
-	color: white;
-	margin: 0 10px;
-	padding: 10px 20px;
-	font-size: 16px;
-	cursor: pointer;
-	background-color: var(--accent);
-	border: none;
-	border-radius: 4px;
+nav > button {
+  text-decoration: none;
+  color: #fff !important;           /* fixed white text */
+  margin: 0 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #12486A !important; /* fixed blue background */
+  border: none !important;
+  border-radius: 4px;
+  box-shadow: var(--shadow);
 }
 
-/* Button hover effect */
+nav > button:hover {
+  background-color: #487d9d !important; /* fixed hover blue */
+  color: #fff !important;
+}
+
+/* Optional: keyboard focus ring */
+nav > button:focus-visible {
+  outline: 2px solid #7abce2;  /* light blue ring */
+  outline-offset: 2px;
+}
+
+/* Button hover effect
 nav button:hover {
 	background-color: var(--accent-hover);
 	color: white;
-}
+} */
 
 .content {
 	margin-bottom: 20px;
 	text-align: center;
 }
-
 
 /*article section --- article.html*/
 .story-section {
@@ -129,13 +142,14 @@ nav button:hover {
 	font-family: Lucida-Console, sans-serif;
 }
 .story-section:hover {
-	background-color: #c5d7e2;
+	background-color: var(--card-hover);
 }
 .story-link {
 	text-decoration: none;
 	color: inherit;
 	display: block;
 }
+
 
 /*PROJECTS section ------ index page*/
 .project-tiles {
@@ -294,38 +308,48 @@ nav button:hover {
     background-color: var(--card-hover);  
 }
 
-/* Desktop and tablet style for the navigation buttons */
-nav {
-    margin-bottom: 20px;
-    text-align: center;
+/* Tech Stack – make icons readable in dark mode */
+.tech-stack-icons .icon {
+  width: 64px;
+  height: 64px;
+  padding: 10px;
+  border-radius: 12px;
+  background: #fff;                 /* constant light chip so dark icons show */
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  display: grid;
+  place-items: center;
 }
 
-nav button {
-    text-decoration: none;
-    color: white;
-    margin: 0 10px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    background-color: var(--accent);
-    border: none;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
+.tech-stack-icons .icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: grayscale(0%);             /* keep brand colors; remove heavy gray */
+  transition: transform .2s ease, filter .2s ease;
 }
+
+.tech-stack-icons .icon:hover img {
+  transform: scale(1.08);
+}
+
+/* Optional: if some icons are still too dim in dark mode, gently lift them */
+:root[data-theme="dark"] .tech-stack-icons .icon img {
+  filter: brightness(1.15) contrast(1.05);
+}
+
 
 /* Mobile responsiveness */
 @media (max-width: 768px) {
     nav {
         text-align: left;
     }
-    
     nav button {
         display: block;
         width: 100%;
         margin-bottom: 10px;
         padding: 15px 20px;
     }
-
     /* AUTHOR section mobile fix */
     .author-content {
         flex-direction: column;
@@ -400,3 +424,125 @@ nav button {
 		filter: grayscale(0%);
 		transform: scale(1.15);
 	}
+
+/* ===== Global text color normalization ===== */
+h1,h2,h3,h4,h5,h6{ color: var(--text); }
+p, li, label, small, span{ color: var(--muted-text); }
+a{ color: var(--accent); }
+a:hover{ color: var(--accent-hover); }
+
+/* Section + card backgrounds
+.section-background{ background: var(--card); box-shadow: var(--shadow); }
+.story-section, .project-tile, .badge, .collaboration-item, .tech-stack-icons{ 
+  background: var(--card); 
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+} */
+
+/* Specific components */
+#about-author p,
+.author-content p,
+.story-content p,
+.project-tile p,
+.collaboration-item span{
+  color: var(--muted-text);
+}
+.project-tile h3,
+.story-content h1,
+.story-content h2{ color: var(--text); }
+
+/* Hover fills */
+.project-tile:hover,
+.badge:hover,
+.collaboration-item:hover{ background: var(--card-hover); }
+
+/* Nav buttons */
+nav button{ background: var(--accent); color: #fff; border: 1px solid var(--border); }
+nav button:hover{ background: var(--accent-hover); color: #fff; }
+
+/* Base */
+html, body{ background: var(--bg); color: var(--text); }
+
+
+/* === Neumorphic Light/Dark Toggle (narrow, icon-friendly) === */
+/* track must clip the thumb; keep your width/height vars */
+.neo-theme-switch #neoToggle {
+  --h: 44px;
+  --w: 90px;   /* narrow pill */
+  --pad: 6px;
+  --thumb: 32px;
+  --radius: 999px;
+  background: transparent !important;
+  border: 0 !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  appearance: none;
+  -webkit-appearance: none;
+}
+.neo-theme-switch {
+  position: static;          /* in normal flow */
+  width: 100%;
+  display: flex;
+  justify-content: center;   /* center above nav */
+  align-items: center;       /* ensures the pill itself is vertically centered */
+  margin: 18px auto 20px;    /* space from header (top) and nav (bottom) */
+}
+
+
+.neo-theme-switch .neo-track {
+  position: relative;
+  width: var(--w);
+  height: var(--h);
+  border-radius: var(--radius);
+  overflow: hidden;          
+  background: var(--card);
+  border: 1px solid var(--border);
+}
+
+.neo-theme-switch .neo-icon {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%); /* center on X & Y */
+  width: 18px; height: 18px;
+  object-fit: contain;
+  pointer-events: none;
+  opacity: .55;
+}
+/* Sun at 25%, Moon at 75% of track width */
+.neo-theme-switch .neo-sun  { left: 25%; }
+.neo-theme-switch .neo-moon { left: 75%; }
+
+
+/* transparent glass thumb (your existing version is fine) */
+.neo-theme-switch .neo-thumb {
+  position: absolute;
+  top: 50%;
+  left: var(--pad);
+  width: var(--thumb);
+  height: var(--thumb);
+  transform: translateY(-50%);
+  border-radius: var(--radius);
+  background: transparent;
+  border: 1px solid rgba(0,0,0,.08);
+  box-shadow:
+    0 2px 6px rgba(0,0,0,.20),
+    inset 0 0 0 1px var(--border);
+  transition: left .25s ease, box-shadow .25s ease, border-color .25s ease;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* DARK state: slide right and highlight moon, dim sun */
+:root[data-theme="dark"] .neo-theme-switch .neo-thumb {
+  left: calc(var(--w) - var(--pad) - var(--thumb));
+  border-color: rgba(255,255,255,.12);
+  box-shadow:
+    0 2px 6px rgba(0,0,0,.35),
+    inset 0 0 0 1px var(--border);
+}
+:root[data-theme="dark"]  .neo-theme-switch .neo-moon { opacity: .95; }
+:root[data-theme="dark"]  .neo-theme-switch .neo-sun  { opacity: .35; }
+
+/* LIGHT state: highlight sun, dim moon */
+:root[data-theme="light"] .neo-theme-switch .neo-sun  { opacity: .95; }
+:root[data-theme="light"] .neo-theme-switch .neo-moon { opacity: .35; }

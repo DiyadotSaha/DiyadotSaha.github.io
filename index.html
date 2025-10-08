@@ -5,18 +5,27 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Diya's Corner</title>
-	<link rel="stylesheet" href="style.theming.css">
-
-	
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
+	<link rel="stylesheet" href="style.theming.css" />
+	<script src="theme-toggle.js" defer></script>
 </head>
 
 <body>
 	<header>
-		<img src="index/people.png" alt="Health Equity" class="header-image">
+		<img src="index/title.png" alt="Health Equity" class="header-image">
 	</header>
 	</section>
+		<div class="neo-theme-switch" id="neoThemeSwitch" role="group" aria-label="Theme">
+		<button id="neoToggle" type="button" aria-pressed="false">
+			<div class="neo-track">
+			<img class="neo-icon neo-sun"  src="index/sun.png"  alt="" aria-hidden="true">
+			<img class="neo-icon neo-moon" src="index/moon2.png" alt="" aria-hidden="true">
+			<div class="neo-thumb" aria-hidden="true"></div>
+			</div>
+		</button>
+		</div>
+
+
+
 	<nav>
 		<button onclick="location.href='index.html'">About Me</button>
 		<button onclick="location.href='projects.html'">Projects</button>
@@ -35,8 +44,6 @@
 			</div>
 		</div>
 	</section>
-
-
 
 	<section class="section-background tech-stack-icons">
 		<h2>Tech Stack</h2>
@@ -63,6 +70,7 @@
 		  <div class="icon" title="Scikit-learn"><img src="icons/scikitlearn.png" alt="Scikit-learn"></div>
 		</div>
 	  </section>
+
 	  <section id="collaborations">
 		<h2>Contact Me</h2>
 		<div class="collaboration-grid">
